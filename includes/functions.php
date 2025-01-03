@@ -86,4 +86,11 @@ function add_product_gallery($conn, $pid, $path)
 }
 
 
-function show_all_product_info() {}
+function show_all_product_info($con)
+{
+
+    $sql = "select * from products";
+    $result = mysqli_query($con, $sql);
+
+    return $result;
+}

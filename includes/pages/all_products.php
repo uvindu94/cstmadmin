@@ -1,51 +1,51 @@
+<?php
+
+$allproducts = show_all_product_info($conn);
+
+// var_dump($allproducts);
+
+?>
+
 <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">All Products</h4>
-                    <p class="card-description"> Add class <code>.table</code>
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Profile</th>
-                            <th>VatNo.</th>
-                            <th>Created</th>
-                            <th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Jacob</td>
-                            <td>53275531</td>
-                            <td>12 May 2017</td>
-                            <td><label class="badge badge-danger">Pending</label></td>
-                          </tr>
-                          <tr>
-                            <td>Messsy</td>
-                            <td>53275532</td>
-                            <td>15 May 2017</td>
-                            <td><label class="badge badge-warning">In progress</label></td>
-                          </tr>
-                          <tr>
-                            <td>John</td>
-                            <td>53275533</td>
-                            <td>14 May 2017</td>
-                            <td><label class="badge badge-info">Fixed</label></td>
-                          </tr>
-                          <tr>
-                            <td>Peter</td>
-                            <td>53275534</td>
-                            <td>16 May 2017</td>
-                            <td><label class="badge badge-success">Completed</label></td>
-                          </tr>
-                          <tr>
-                            <td>Dave</td>
-                            <td>53275535</td>
-                            <td>20 May 2017</td>
-                            <td><label class="badge badge-warning">In progress</label></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
+  <div class="card-body">
+    <h4 class="card-title">All Products</h4>
+    <p class="card-description"> Add class <code>.table</code>
+    </p>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Thumbnail</th>
+            <th>Name</th>
+            <th>Price.</th>
+            <th>Description</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($allproducts as $item) {
+            # code...
+            $absolpath = $item['main_image'];
+            $removeslashes = explode("../", $absolpath);
+            $realpath = $removeslashes[2];
+
+            echo '
+            <tr>
+              <td><img style="width:40px; height:auto;" src="./' . $realpath . '"></td>
+              <td>' . $item['name'] . '</td>
+              <td>' . $item['price'] . '</td>
+              <td>' . $item['description'] . '</td>
+              <td>' . $item['created_at'] . '</td>
+         
+            </tr>';
+          }
+
+
+          ?>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,9 @@
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
 $role = $_SESSION['role'];
+
+include('./includes/connection.php');
+include('./includes/functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
