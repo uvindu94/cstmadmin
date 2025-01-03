@@ -53,6 +53,8 @@ include('./includes/functions.php');
             include('./includes/pages/all_products.php');
           } elseif ($_GET['page'] == 'add_product') {
             include('./includes/pages/add_new_product.php');
+          } elseif ($_GET['page'] == 'edit_product') {
+            include('./includes/pages/edit_product.php');
           } else {
           }
 
