@@ -1,4 +1,13 @@
-<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="25" cy="25" r="25" fill="#1F3BB3"/>
-<path d="M29.784 31.888H19.596L17.796 37H12.432L21.792 11.872H27.588L36.912 37H31.548L29.784 31.888ZM28.416 28.036L24.672 17.308L20.928 28.036H28.416Z" fill="white"/>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">
+	<title>logo-mini</title>
+	<style>
+		tspan { white-space:pre } 
+		.s0 { fill: #1f3bb3 } 
+		.t1 { font-size: 32px;fill: #ffffff;font-weight: 400;font-family: "DelaGothicOne-Regular", "Dela Gothic One" } 
+	</style>
+	<path class="s0" d="m25 50c-13.8 0-25-11.2-25-25 0-13.8 11.2-25 25-25 13.8 0 25 11.2 25 25 0 13.8-11.2 25-25 25z"/>
+	<text id="U" style="transform: matrix(1,0,0,1,-4,11)" >
+		<tspan x="14.3" y="25" class="t1">U
+</tspan>
+	</text>
 </svg>
