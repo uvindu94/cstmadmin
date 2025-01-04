@@ -6,6 +6,7 @@ $role = $_SESSION['role'];
 
 include('./includes/connection.php');
 include('./includes/functions.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,11 +50,11 @@ include('./includes/functions.php');
         <div class="content-wrapper">
           <?php
 
-          if ($_GET['page'] == 'all_products') {
+          if ( isset($_GET['page']) && $_GET['page'] == 'all_products') {
             include('./includes/pages/all_products.php');
-          } elseif ($_GET['page'] == 'add_product') {
+          } elseif (  isset($_GET['page']) && $_GET['page'] == 'add_product') {
             include('./includes/pages/add_new_product.php');
-          } elseif ($_GET['page'] == 'edit_product') {
+          } elseif (  isset($_GET['page']) && $_GET['page'] == 'edit_product') {
             include('./includes/pages/edit_product.php');
           } else {
           }

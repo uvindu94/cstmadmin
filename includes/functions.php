@@ -69,6 +69,10 @@ function uploadImage($file)
 
 function addnewproduct($con, $title, $path, $price, $description)
 {
+    
+    $removeslashes = explode("../", $path);
+    $path = $removeslashes[2];
+
     $sql = "INSERT INTO `products` (`id`, `name`, `main_image`, `price`, `description`, `created_at`, `update_at`) VALUES (NULL, '$title', '$path', '$price', '$description', current_timestamp(), current_timestamp());";
     $result = mysqli_query($con, $sql);
 
@@ -93,4 +97,24 @@ function show_all_product_info($con)
     $result = mysqli_query($con, $sql);
 
     return $result;
+}
+
+
+
+function getspecificproduct($con,$id)
+{
+    $sql="select * from products where id='$id'";
+    $result=mysqli_query($con,$sql);
+
+    return $result;
+}
+
+
+function get_gallery_items($con,$id,$count)
+{
+    $sql="select * from product_gallery where product_id=$id Limit $count";
+    $result=mysqli_query($con,$sql);
+
+    return $result;
+
 }

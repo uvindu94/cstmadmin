@@ -26,9 +26,8 @@ $allproducts = show_all_product_info($conn);
           <?php
           foreach ($allproducts as $item) {
             # code...
-            $absolpath = $item['main_image'];
-            $removeslashes = explode("../", $absolpath);
-            $realpath = $removeslashes[2];
+
+            $realpath = $item['main_image'];
 
             echo '
             <tr>
