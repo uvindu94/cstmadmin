@@ -7,6 +7,11 @@ $role = $_SESSION['role'];
 include('./includes/connection.php');
 include('./includes/functions.php');
 
+if(!isset($_SESSION['username'])  )
+{
+header('location: ./login.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

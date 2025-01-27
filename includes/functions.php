@@ -118,3 +118,12 @@ function get_gallery_items($con,$id,$count)
     return $result;
 
 }
+
+
+function delete_product($con,$id)
+{
+    $sql="delete  from products where id=$id";
+    $result=mysqli_query($con,$sql);
+
+    return $result;
+}

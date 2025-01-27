@@ -17,6 +17,7 @@ $p_gallery=get_gallery_items($conn,$pid,3);
 foreach ($singleproduct as $item) {
     # code...
     $title = $item['name'];
+    $id = $item['id'];
     $desc = $item['description'];
     $price = $item['price'];
     $thumbnail = $item['main_image'];
@@ -67,6 +68,7 @@ foreach ($p_gallery as $item) {
                 <label for="" class="col-sm-3 col-form-label">Title</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="title" name="title" placeholder="Product Title" value="<?php echo $title; ?>">
+                    <input type="hidden" class="form-control" id="pid" name="pid" placeholder="Product Title" value="<?php echo $id; ?>">
                 </div>
             </div>
             <div class="form-group row">
@@ -111,11 +113,14 @@ foreach ($p_gallery as $item) {
 
             <button type="submit" class="btn btn-primary me-2">Update Product</button>
             <button class="btn btn-light">Cancel</button>
+            <!-- <button class="btn btn-danger">Delete This Product</button> -->
 
             <p style="color: red;"><?php if (isset($_SESSION['msg'])) {
                                         echo $_SESSION['msg'];
                                     }
                                     unset($_SESSION['msg']); ?></p>
         </form>
+
+
     </div>
 </div>
