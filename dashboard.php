@@ -61,7 +61,11 @@ header('location: ./login.php');
             include('./includes/pages/add_new_product.php');
           } elseif (  isset($_GET['page']) && $_GET['page'] == 'edit_product') {
             include('./includes/pages/edit_product.php');
-          } else {
+          }
+          elseif (  isset($_GET['page']) && $_GET['page'] == 'add_post') {
+            include('./includes/pages/blog/add_new_post.php');
+          } 
+          else {
           }
 
           ?>

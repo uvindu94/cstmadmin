@@ -18,10 +18,28 @@
           <li class="nav-item"> <a class="nav-link" href="?page=all_products">All info</a></li>
           <li class="nav-item"> <a class="nav-link" href="?page=add_product">Add New</a></li>
           <li class="nav-item"> <a class="nav-link" href="?page=edit_product">Edit Products</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Delete Products</a></li>
+          <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Delete Products</a></li> -->
         </ul>
       </div>
     </li>
+
+    <li class="nav-item nav-category">Blog</li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#ui-blogs" aria-expanded="false" aria-controls="ui-blogs">
+        <i class="menu-icon mdi mdi-file-document"></i>
+        <span class="menu-title">Blog Posts</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-blogs">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="?page=all_products">All Posts</a></li>
+          <li class="nav-item"> <a class="nav-link" href="?page=add_post">Add New</a></li>
+          <li class="nav-item"> <a class="nav-link" href="?page=edit_product">Edit Blogs</a></li>
+          <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Delete Products</a></li> -->
+        </ul>
+      </div>
+    </li>
+
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
         <i class="menu-icon mdi mdi-card-text-outline"></i>
