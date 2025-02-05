@@ -33,7 +33,7 @@ function get_user_info($conn, $username)
 function uploadImage($file)
 {
     // Define the upload directory
-    $uploadDir = '../../uploads/';
+    $uploadDir = '../../../uploads/';
 
     // Allowed file types
     $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
@@ -71,15 +71,28 @@ function addnewproduct($con, $title, $path, $price, $description)
 {
     
     $removeslashes = explode("../", $path);
-    $path = $removeslashes[2];
+    $path = $removeslashes[3];
 
-    $sql = "INSERT INTO `products` (`id`, `name`, `main_image`, `price`, `description`, `created_at`, `update_at`) VALUES (NULL, '$title', '$path', '$price', '$description', current_timestamp(), current_timestamp());";
+   $sql = "INSERT INTO `products` (`id`, `name`, `main_image`, `price`, `description`, `created_at`, `update_at`) VALUES (NULL, '$title', '$path', '$price', '$description', current_timestamp(), current_timestamp());";
     $result = mysqli_query($con, $sql);
 
     $insertedId = mysqli_insert_id($con);
     return $insertedId;
 }
 
+
+function addnewpost($con, $title, $path, $description)
+{
+    
+    $removeslashes = explode("../", $path);
+    $path = $removeslashes[3];
+
+    $sql = "INSERT INTO `posts` (`post_id`, `title`, `description`, `cover_image`, `created_date`, `updated_date`) VALUES (NULL, '$title', '$description', '$path', current_timestamp(), current_timestamp());";
+    $result = mysqli_query($con, $sql);
+
+    $insertedId = mysqli_insert_id($con);
+    return $insertedId;
+}
 
 function add_product_gallery($conn, $pid, $path)
 {

@@ -37,7 +37,7 @@ $allproducts = show_all_product_info($conn);
               <td>' . $item['price'] . '</td>
               <td>' . $item['description'] . '</td>
               <td>' . $item['created_at'] . '</td>
-              <td> <a class="btn btn-sm btn-danger" href="./includes/scripts/delete_product.php?id='.$item['id'].'">Delete</td>
+              <td> <a class="btn btn-sm btn-primary" href="./dashboard.php?product='.$item['id'].'&page=edit_product">Edit</a> <a class="btn btn-sm btn-danger" href="./includes/scripts/products/delete_product.php?id='.$item['id'].'">Delete</a></td>
          
             </tr>';
           }

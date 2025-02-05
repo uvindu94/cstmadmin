@@ -10,15 +10,15 @@ include('../../functions.php');
 $pathmain=uploadImage($_FILES['thumbnail']);
 
 
+
 if(empty($title) )
 {
 
     $added_new_id=0;
 }
 else
-{
-
-$added_new_id=addnewpost($con, $title, $path, $description);
+{       echo $pathmain;
+       $added_new_id=addnewproduct($conn,$title,$pathmain,$price,$desc);
    
 }
 
@@ -26,7 +26,7 @@ if(isset($_FILES['gallery1']))
 {
     $path1=uploadImage($_FILES['gallery1']);
     $removeslashes = explode("../", $path1);
-    $path1 = $removeslashes[2];
+    $path1 = $removeslashes[3];
     add_product_gallery($conn,$added_new_id,$path1);
 }
 
@@ -35,7 +35,7 @@ if(isset($_FILES['gallery2']))
 {
     $path2=uploadImage($_FILES['gallery2']);
     $removeslashes = explode("../", $path2);
-    $path2 = $removeslashes[2];
+    $path2 = $removeslashes[3];
     add_product_gallery($conn,$added_new_id,$path2);
 }
 
@@ -45,22 +45,22 @@ if(isset($_FILES['gallery3']))
 {
     $path3=uploadImage($_FILES['gallery3']);
     $removeslashes = explode("../", $path3);
-    $path3 = $removeslashes[2];
+    $path3 = $removeslashes[3];
     add_product_gallery($conn,$added_new_id,$path3);
 }
 
 
 if($added_new_id>0)
 {
-$_SESSION['msg']="Post Added Successfully";
+$_SESSION['msg']="Product Added Successfully";
 }
 else
 {
-    $_SESSION['msg']="Post Added Failed";
+    $_SESSION['msg']="Product Added Failed";
 }
 
 
-header("Location: ../../../dashboard.php?page=add_post");
+header("Location: ../../../dashboard.php?page=add_product");
 exit;
 
 ?>

@@ -1,7 +1,7 @@
 <?php session_start();
 
-include('../connection.php');
-include('../functions.php');
+include('../../connection.php');
+include('../../functions.php');
 
 if(!isset($_SESSION['username'])  )
 {
@@ -12,7 +12,7 @@ else
 
     $id=$_GET['id'];
     delete_product($conn,$id); 
-    header('location: ../../dashboard.php?page=all_products');
+    header('location: ../../../dashboard.php?page=all_products');
 
 }
 

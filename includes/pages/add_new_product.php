@@ -2,7 +2,7 @@
     <div class="card-body">
         <h4 class="card-title">Add New Product</h4>
         <p class="card-description"> Initial form layout </p>
-        <form action="./includes/scripts/addnewproduct.php" class="forms-sample" method="post" enctype="multipart/form-data">
+        <form action="./includes/scripts/products/addnewproduct.php" class="forms-sample" method="post" enctype="multipart/form-data">
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Title</label>
                 <div class="col-sm-9">
