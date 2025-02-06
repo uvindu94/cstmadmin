@@ -7,7 +7,7 @@ include('../../functions.php');
 
 // echo addnewproduct($conn, $title, $desc, $price, $thumbnail, $gallery1, $gallery2, $gallery3);
 
-$pathmain=uploadImage($_FILES['thumbnail']);
+echo $pathmain=uploadImage($_FILES['thumbnail']);
 
 
 if(empty($title) )
@@ -18,7 +18,7 @@ if(empty($title) )
 else
 {
 
-$added_new_id=addnewpost($con, $title, $path, $description);
+$added_new_id=addnewpost($conn, $title, $pathmain, $desc);
    
 }
 
@@ -26,8 +26,8 @@ if(isset($_FILES['gallery1']))
 {
     $path1=uploadImage($_FILES['gallery1']);
     $removeslashes = explode("../", $path1);
-    $path1 = $removeslashes[2];
-    add_product_gallery($conn,$added_new_id,$path1);
+    $path1 = $removeslashes[3];
+    add_post_gallery($conn,$added_new_id,$path1);
 }
 
 
@@ -35,8 +35,8 @@ if(isset($_FILES['gallery2']))
 {
     $path2=uploadImage($_FILES['gallery2']);
     $removeslashes = explode("../", $path2);
-    $path2 = $removeslashes[2];
-    add_product_gallery($conn,$added_new_id,$path2);
+    $path2 = $removeslashes[3];
+    add_post_gallery($conn,$added_new_id,$path2);
 }
 
 
@@ -45,8 +45,8 @@ if(isset($_FILES['gallery3']))
 {
     $path3=uploadImage($_FILES['gallery3']);
     $removeslashes = explode("../", $path3);
-    $path3 = $removeslashes[2];
-    add_product_gallery($conn,$added_new_id,$path3);
+    $path3 = $removeslashes[3];
+    add_post_gallery($conn,$added_new_id,$path3);
 }
 
 
@@ -60,7 +60,7 @@ else
 }
 
 
-header("Location: ../../../dashboard.php?page=add_post");
-exit;
+// header("Location: ../../../dashboard.php?page=add_post");
+// exit;
 
 ?>

@@ -103,6 +103,16 @@ function add_product_gallery($conn, $pid, $path)
 }
 
 
+function add_post_gallery($conn, $pid, $path)
+{
+    $sql = "INSERT INTO `post_gallery` (`id`, `post_id`, `path`, `created_at`, `updated_at`) VALUES (NULL, '$pid', '$path',  current_timestamp(), current_timestamp());";
+    $result = mysqli_query($conn, $sql);
+
+    return 1;
+}
+
+
+
 function show_all_product_info($con)
 {
 
